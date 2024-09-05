@@ -1,3 +1,4 @@
 # Bank Console Application
-## main <Branch> is for final product.
-## cooking_lab <Branch> Used for development and testing purposes.
+## Branch Setup:
+* main branch is for final product.
+* cooking_lab branch Used for development and testing purposes.
