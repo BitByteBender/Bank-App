@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <string>
 
 using std::cout;
 using std::endl;
@@ -24,4 +25,8 @@ struct stClient
 vector <stClient> SaveRecords();
 vector <string> SaveRecords(vector <stClient> &vClients);
 void SaveRecordsToFile(vector <string> &ClientRecs);
+vector <string> LoadRecordsFromFile(string fname);
+stClient LineToRecord(string Rec, string DELIM);
+vector <stClient> LineToClientsRecord(vector <string> &vClientRecs);
+void SaveSingleRecToFile(string Record);
 #endif /* CORE_H */

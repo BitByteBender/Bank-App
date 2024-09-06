@@ -8,6 +8,7 @@ using displayLib::MainMenuScreen;
 using displayLib::DisplayClientList;
 using displayLib::DisplayRecords;
 
+
 int main(void)
 {
   vector vClients = SaveRecords();
@@ -16,6 +17,8 @@ int main(void)
   cout<<'\n';
   DisplayClientList("=====", 19);*/
   DisplayRecords(vClients);
-  SaveRecordsToFile(vRecs);
+  //SaveRecordsToFile(vRecs);
+  //cout<<"Loading files:\n";
+  //cout<<LoadRecordsFromFile("Recs")[0]<<'\n';
   return (0);
 }
