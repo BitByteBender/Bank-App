@@ -11,10 +11,11 @@ using displayLib::DisplayRecords;
 int main(void)
 {
   vector vClients = SaveRecords();
+  vector vRecs = SaveRecords(vClients);
   /*MainMenuScreen("Main Menu Screen");
   cout<<'\n';
   DisplayClientList("=====", 19);*/
   DisplayRecords(vClients);
-  
+  SaveRecordsToFile(vRecs);
   return (0);
 }
