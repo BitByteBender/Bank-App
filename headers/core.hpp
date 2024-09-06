@@ -2,8 +2,10 @@
 #define CORE_H
 
 #include <iostream>
+#include <vector>
 
 using std::string;
+using std::vector;
 
 struct stClient
 {
@@ -14,4 +16,5 @@ struct stClient
   double AccountBalance;
 };
 
+vector <stClient> SaveRecords();
 #endif /* CORE_H */

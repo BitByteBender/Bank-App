@@ -2,10 +2,13 @@
 #define DISPLAYLIB_H
 
 #include <iostream>
+#include <vector>
+#include "../core.hpp"
 
 using std::cout;
 using std::endl;
 using std::string;
+using std::vector;
 
 namespace displayLib
 {
@@ -50,6 +53,18 @@ namespace displayLib
 	cout<<"\t\t\t\t\tEmpty clients list\n"<<endl;
       }
       Styler(TableStyling, Len);
+    }
+  }
+
+  void DisplayRecords(vector <stClient> &vClients)
+  {
+    cout<<"Checking: "<<endl;
+    for (const stClient &cl:vClients) {
+      cout<<"Account Number: "<<cl.AccountNumber<<'\n'
+	  <<"Pincode: "<<cl.PinCode<<'\n'
+	  <<"Fullname: "<<cl.Fullname<<'\n'
+	  <<"Phone Number: "<<cl.Phone<<'\n'
+	  <<"Account Balance: "<<cl.AccountBalance<<endl;
     }
   }
 };
