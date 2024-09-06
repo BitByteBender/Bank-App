@@ -1,8 +1,7 @@
 #include "../headers/core.hpp"
 #include "../headers/library/inputLib.hpp"
-#include <vector>
+#include "../headers/library/strLib.hpp"
 
-using std::vector;
 using std::cout;
 using inputs::LoadRecord;
 using inputs::PromptReader;
@@ -20,4 +19,15 @@ vector <stClient> SaveRecords()
   } while (Decision == 'y' || Decision == 'y');
 
   return (vClients);
+}
+
+vector <string> SaveRecords(vector <stClient> &vClients)
+{
+  vector <string> vClientRecs;
+
+  for (const stClient &cl:vClients) {
+    vClientRecs.push_back(str::Tokenizer(cl, "#/\\#"));
+  }
+
+  return (vClientRecs);
 }

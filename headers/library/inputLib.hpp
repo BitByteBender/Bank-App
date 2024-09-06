@@ -2,6 +2,7 @@
 #define INPUTLIB_H
 
 #include "../core.hpp"
+#include "handlers.hpp"
 
 using std::cout;
 using std::cin;
@@ -24,8 +25,15 @@ namespace inputs
   {
     stClient Client;
     cout<<Msg;
+
+    string AccNumber = PromptReader("Enter Account Number: ");
     
-    Client.AccountNumber = PromptReader("Enter Account Number: ");
+    /*if (handlers::CheckAccNum(AccNumber)) {
+      cout<<"Account Number already exists, ";
+      AccNumber = PromptReader("re-Enter Account Number: ");
+    }*/
+    
+    Client.AccountNumber = AccNumber;
     Client.PinCode = uint16_t(stoi(PromptReader("Enter PinCode: ")));
     Client.Fullname = PromptReader("Enter Fullname: ");
     Client.Phone = PromptReader("Enter Phone Number: ");
