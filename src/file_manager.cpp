@@ -44,3 +44,11 @@ vector <string> LoadRecordsFromFile(string fname)
  
   return (vClientRecs);
 }
+
+vector <string> LoadSingleRecordFromFile(string fname)
+{
+  vector <string> vClientRec;
+
+  
+  return (vClientRec);
+}
