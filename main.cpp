@@ -1,17 +1,25 @@
-#include <iostream>
-#include "headers/library/displayLib.hpp"
-
-using std::cout;
-using std::cin;
-using std::endl;
+//#include "headers/library/displayLib.hpp"
+#include "headers/core.hpp"
+/*
 using displayLib::MainMenuScreen;
-using displayLib::DisplayClientList;
+using displayLib::DisplayTable;
+using displayLib::DisplayRecords;
+*/
 
 int main(void)
 {
-  MainMenuScreen("Main Menu Screen");
+  //vector <stClient> vClients = SaveRecords();
+  //vector <string> vRecs = SaveRecords(vClients);
+  //DisplayRecords(vClients);
+  //SaveRecordsToFile(vRecs);
+  //cout<<"Loading files:\n";
+  //cout<<LoadRecordsFromFile("Recs")[0]<<'\n';
+  //MainMenuScreen("Main Menu Screen");
   cout<<'\n';
-  DisplayClientList("=====", 19);
+  //DisplayTable("=====", 19);
+  vector <string> vRecs = LoadRecordsFromFile("Recs");
+  //vClients = LineToClientsRecord(vRecs);
 
+  DisplayClientsList(vRecs);
   return (0);
 }
