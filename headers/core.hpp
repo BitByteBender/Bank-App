@@ -34,5 +34,11 @@ void SaveSingleRecToFile(string Record);
 vector <string> splitLine(string Line, string DELIM);
 stClient LineToRecord(vector <string> &vStr);
 void DisplayClientsList(vector <string> &vClientRecs);
+
+uint16_t PrintClientList(vector <string> &vRecs, string fname);
+void InsertNewClient(vector <stClient> &vClients, vector <string> &vRecs, string fname);
+uint16_t Functionalities(uint16_t Picker);
+void OnBeginPlay(void);
+void OnExit(void);
 #endif /* CORE_H */
 
