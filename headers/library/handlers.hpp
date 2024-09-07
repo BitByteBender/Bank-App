@@ -5,17 +5,9 @@
 
 namespace handlers
 {
-
-  bool CheckAccNum(string &AccNum)
-  {
-    vector <string> vClientRecs = LoadRecordsFromFile("Recs");
-
-    for (const string &Cl:vClientRecs)
-      if (Cl.substr(0, Cl.find("#/\\#")) == AccNum) return (true);
-    
-    return (false);
-  }
-  
+  bool CheckAccNum(string &AccNum);
+  uint16_t ClientsCount(vector <string> &vClients);
+  void LoadClientsRecs(vector <string> &vClientRecs);
 }
 
 #endif /* HANDLERS_H */

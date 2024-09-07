@@ -6,9 +6,11 @@
 #include <fstream>
 #include <string>
 
+
 using std::cout;
 using std::endl;
 using std::string;
+using std::to_string;
 using std::vector;
 using std::fstream;
 using std::ios;
@@ -29,4 +31,8 @@ vector <string> LoadRecordsFromFile(string fname);
 stClient LineToRecord(string Rec, string DELIM);
 vector <stClient> LineToClientsRecord(vector <string> &vClientRecs);
 void SaveSingleRecToFile(string Record);
+vector <string> splitLine(string Line, string DELIM);
+stClient LineToRecord(vector <string> &vStr);
+void DisplayClientsList(vector <string> &vClientRecs);
 #endif /* CORE_H */
+
