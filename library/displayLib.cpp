@@ -63,4 +63,13 @@ namespace displayLib
 	  <<"Account Balance: "<<cl.AccountBalance<<endl;
     }
   }
+
+  void DisplaySingleRecord(stClient Client)
+  {
+    cout<<"Account Number: "<<Client.AccountNumber<<'\n'
+	<<"Pincode: "<<Client.PinCode<<'\n'
+	<<"Fullname: "<<Client.Fullname<<'\n'
+	<<"Phone Number: "<<Client.Phone<<'\n'
+	<<"Account Balance: "<<Client.AccountBalance<<endl;
+  }
 }

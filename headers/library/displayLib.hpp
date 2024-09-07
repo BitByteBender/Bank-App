@@ -9,6 +9,7 @@ namespace displayLib
   void Styler(string Border, uint16_t Len);
   void DisplayTable(string TableStyling, uint16_t Len, vector <string> &vClientRecs);
   void DisplayRecords(vector <stClient> &vClients);
+  void DisplaySingleRecord(stClient Client);
 };
 
 #endif /* DISPLAYLIB_H */
