@@ -6,8 +6,8 @@ enum enMenu
 {
   ShowClientList = 1,
   AddNewClient = 2,
-  UpdateClient = 3,
-  DeleteClient = 4,
+  DeleteClient = 3,
+  UpdateClient = 4,
   FindClient = 5,
   Exit = 6
 };
@@ -17,14 +17,21 @@ uint16_t Functionalities(uint16_t Picker)
   vector <string> vRecs;
   vector <stClient> vClients;
   string fname = "Recs";
+  string AccNum = "";
   
   switch (Picker) {
   case (enMenu::ShowClientList):
     return (PrintClientList(vRecs, fname));
   case (enMenu::AddNewClient):
     return (InsertNewClient(vClients, vRecs, fname));
+  case (enMenu::DeleteClient):
+    AccNum = inputs::PromptReader("Enter AccountNumber: ");
+    vRecs = DeleteClientRec(AccNum, vRecs, fname);
+    return (std::stoi(inputs::PromptReader("\nPress [0] to get back to Main Menu ")));
   case (enMenu::FindClient):
-    return (FindRecord(vRecs, fname));
+    AccNum = inputs::PromptReader("Enter AccountNumber: ");
+    FindRecord(AccNum, vRecs, fname);
+    return (std::stoi(inputs::PromptReader("\nPress [0] to get back to Main Menu ")));
   case (enMenu::Exit):
     OnExit();
     break;
@@ -69,26 +76,45 @@ bool CheckRecord(string &AccNum, vector <string> &vRecs, string fname)
   return (GetSingleRecord(AccNum, vRecs, fname) != "None");
 }
 
-uint16_t FindRecord(vector <string> &vRecs, string fname)
+bool FindRecord(string &AccNum, vector <string> &vRecs, string fname)
 {
-  string AccNum = inputs::PromptReader("Enter AccountNumber: ");
   vector <string> vCntr;
   
   if (CheckRecord(AccNum, vRecs, fname)) {
     vCntr = splitLine(GetSingleRecord(AccNum, vRecs, fname), "#/\\#");
     displayLib::DisplaySingleRecord(LineToRecord(vCntr));
+    return (true);
   } else
     cout<<"Client with Account Number (" + AccNum + ") is Not Found!\n";
-  
-  return (std::stoi(inputs::PromptReader("\nPress [0] to get back to Main Menu ")));
+
+  return (false);
 }
 
-/*
-void DeleteClient(vector <string> &vRecs, vector <stClient> &vClients, string fname)
+vector <string> PerformDeletion(string &AccNum, vector <string> &CurrentRecs)
 {
+  vector <string> NewRecs;
+  short pos = 0;
   
-  vClients = SaveRecords();
-  vRecs = SaveRecords(vClients);
-  vRecs = LoadRecordsFromFile(fname);
+  for (const string &c:CurrentRecs) {
+    pos = c.find("#/\\");
+    if (c.substr(0, pos) != AccNum)
+      NewRecs.push_back(c);
+  }
+  return (NewRecs);
 }
-*/
+
+vector <string> DeleteClientRec(string &AccNum, vector <string> &vRecs, string fname)
+{
+  char Action;
+  
+  if (FindRecord(AccNum, vRecs, fname))
+    Action = inputs::PromptReader("\nDo you want to delete this client (Y|N)? ")[0];
+
+  if (Action == 'Y' || Action == 'y') {
+    vRecs = PerformDeletion(AccNum, vRecs);
+    SaveTruncatedRecordsToFile(vRecs);
+  }
+
+  return (vRecs);
+}
+

@@ -15,6 +15,21 @@ void SaveRecordsToFile(vector <string> &vClientRecs)
   }
 }
 
+void SaveTruncatedRecordsToFile(vector <string> &vTruncatedRecs)
+{
+  fstream File;
+  File.open("Recs", ios::out);
+  
+  if (File.is_open()) {
+    if (!vTruncatedRecs.empty()) {
+      for (const string &tr:vTruncatedRecs) {
+	File<<tr<<'\n';
+      }
+    }
+    File.close();
+  }
+}
+
 void SaveSingleRecToFile(string Record)
 {
   fstream File;
@@ -44,11 +59,11 @@ vector <string> LoadRecordsFromFile(string fname)
  
   return (vClientRecs);
 }
-
+/*
 vector <string> LoadSingleRecordFromFile(string fname)
 {
   vector <string> vClientRec;
 
   
   return (vClientRec);
-}
+}*/
