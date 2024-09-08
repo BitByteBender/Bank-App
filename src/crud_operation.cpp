@@ -52,8 +52,9 @@ void UpdateClientRec(string &AccNum, vector <string> &vRecs, string  fname)
   char Action = handlers::MakeDecision(AccNum, vRecs, fname, "\nDo you want to update this client (Y|N)? ");
 
   if (Action == 'y' || Action == 'y') {
+    cout<<"\nUpdating Account ("+AccNum+") Details...\n";
     vRecs = handlers::PerformUpdate(AccNum, vRecs);
     SaveTruncatedRecordsToFile(vRecs);
-    cout<<"\nClient-Data has been updated successfully.\n";
+    cout<<"\nClient-Account ("+AccNum+") has been updated successfully."<<endl;
   }
 }
