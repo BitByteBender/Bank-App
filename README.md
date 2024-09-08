@@ -5,7 +5,7 @@
 ## Project Screenshots:
 ![Show Clients](screenshots/scr1.png)
 ![Insert Clients](screenshots/scr2.png)
-![Update Client]((screenshots/scr7.png)
+![Update Client](screenshots/scr7.png)
 ![Delete Client](screenshots/scr9.png)
 ![Find Client](screenshots/scr4.png)
 ![Find Client](screenshots/scr5.png)
