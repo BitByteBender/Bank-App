@@ -26,7 +26,10 @@ struct stClient
 
 vector <stClient> SaveRecords();
 vector <string> SaveRecords(vector <stClient> &vClients);
+
 void SaveRecordsToFile(vector <string> &ClientRecs);
+void SaveTruncatedRecordsToFile(vector <string> &vTruncatedRecs);
+
 vector <string> LoadRecordsFromFile(string fname);
 stClient LineToRecord(string Rec, string DELIM);
 vector <stClient> LineToClientsRecord(vector <string> &vClientRecs);
@@ -34,13 +37,6 @@ void SaveSingleRecToFile(string Record);
 vector <string> splitLine(string Line, string DELIM);
 stClient LineToRecord(vector <string> vStr);
 void DisplayClientsList(vector <string> &vClientRecs);
-
-uint16_t PrintClientList(vector <string> &vRecs, string fname);
-uint16_t InsertNewClient(vector <stClient> &vClients, vector <string> &vRecs, string fname);
-
-string GetSingleRecord(string &AccNum, vector <string> &vRecs, string fname);
-bool CheckRecord(string &AccNum, vector <string> &vRecs, string fname);
-uint16_t FindRecord(vector <string> &vRecs, string fname);
 
 uint16_t Functionalities(uint16_t Picker);
 void OnBeginPlay(void);

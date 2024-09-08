@@ -13,3 +13,4 @@ namespace str
 
 
 #endif /* STRLIB_H */
+
