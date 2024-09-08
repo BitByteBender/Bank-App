@@ -12,7 +12,8 @@ enum enMenu
   DeleteClient = 3,
   UpdateClient = 4,
   FindClient = 5,
-  Exit = 6
+  Transactions = 6,
+  Exit = 7
 };
 
 uint16_t Functionalities(uint16_t Picker)
@@ -39,6 +40,9 @@ uint16_t Functionalities(uint16_t Picker)
     AccNum = inputs::PromptReader("Enter AccountNumber: ");
     FindRecord(AccNum, vRecs, fname);
     return (std::stoi(inputs::PromptReader("\nPress [0] to get back to Main Menu ")));
+  case (enMenu::Transactions):
+    TriggerTrxMenu();
+    break;
   case (enMenu::Exit):
     OnExit();
     break;

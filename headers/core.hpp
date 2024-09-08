@@ -39,7 +39,9 @@ stClient LineToRecord(vector <string> vStr);
 void DisplayClientsList(vector <string> &vClientRecs);
 
 uint16_t Functionalities(uint16_t Picker);
+uint16_t Trx_Menu_Handler(uint16_t Picker);
 void OnBeginPlay(void);
+void TriggerTrxMenu(void);
 void OnExit(void);
 #endif /* CORE_H */
 

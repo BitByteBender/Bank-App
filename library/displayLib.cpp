@@ -4,20 +4,36 @@
 
 namespace displayLib
 {
-  void MainMenuScreen(const char *Head)
+  void DisplayHeader(const char *Head)
   {
     cout<<"========================================\n"
-	<<"\t    "<<Head<<"\n"
+	<<Head<<"\n"
 	<<"========================================\n";
+  }
+  
+  void MainMenuScreen(const char *Head)
+  {
+    DisplayHeader(Head);
     cout<<"\t[1]> Show Client List\n"
 	<<"\t[2]> Add New Client\n"
 	<<"\t[3]> Delete Client\n"
 	<<"\t[4]> Update Client Info\n"
 	<<"\t[5]> Find Client\n"
-	<<"\t[6]> Exit";
+	<<"\t[6]> Transactions\n"
+	<<"\t[7]> Exit";
     cout<<"\n========================================\n"<<endl;
   }
 
+  void TransactionsScreen(const char *Head)
+  {
+    DisplayHeader(Head);
+    cout<<"\t[1]> List Of Balances\n"
+	<<"\t[2]> Deposit\n"
+	<<"\t[3]> Withdraw\n"
+	<<"\t[4]> Main Menu"
+	<<"\n========================================\n"<<endl;
+  }
+  
   void Styler(string Border, uint16_t Len)
   {
     while (Len != 0) {
