@@ -14,6 +14,7 @@ namespace inputs
 {
   string PromptReader(const char *Msg);
   stClient LoadRecord(const char *Msg);
+  stClient SaveRec(string &AccNum);
 }
 
 #endif /* INPUTLIB_H */

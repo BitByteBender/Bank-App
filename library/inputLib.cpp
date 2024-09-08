@@ -1,4 +1,3 @@
-//#include "../headers/library/inputLib.hpp"
 #include "../headers/library/handlers.hpp"
 
 using std::cin;
@@ -37,5 +36,18 @@ namespace inputs
     cin>>Client.AccountBalance;
     
     return (Client);
+  }
+
+  stClient SaveRec(string &AccNum)
+  {
+    stClient Cl;
+    
+    Cl.AccountNumber = AccNum;
+    Cl.PinCode = uint16_t(stoi(inputs::PromptReader("Update PinCode: ")));
+    Cl.Fullname = inputs::PromptReader("Update Fullname: ");
+    Cl.Phone = inputs::PromptReader("Update Phone Number: ");
+    Cl.AccountBalance = stod(inputs::PromptReader("Update Balance: "));
+    
+    return (Cl);
   }
 }
