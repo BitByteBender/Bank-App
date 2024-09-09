@@ -12,6 +12,7 @@ enum enTrx
 void Trx_Menu_Handler(uint16_t Picker)
 {
   vector <string> vRecs = LoadRecordsFromFile("Recs");
+  string fname = "Recs", AccNum;
   
   switch (Picker) {
   case (enTrx::ListOfBalances):
@@ -19,8 +20,14 @@ void Trx_Menu_Handler(uint16_t Picker)
     char(inputs::PromptReader("\nPress [0] to get back to transaction menu... ")[0]);
     break;
   case (enTrx::Deposit):
+    vRecs = UpdateBalance(AccNum, vRecs, fname, "deposit");
+    SaveTruncatedRecordsToFile(vRecs);
+    char(inputs::PromptReader("\nPress [0] to get back to transaction menu... ")[0]);
     break;
   case (enTrx::Withdraw):
+    vRecs = UpdateBalance(AccNum, vRecs, fname, "withdraw");
+    SaveTruncatedRecordsToFile(vRecs);
+    char(inputs::PromptReader("\nPress [0] to get back to transaction menu... ")[0]);
     break;
   case (enTrx::MainMenu):
     OnBeginPlay();

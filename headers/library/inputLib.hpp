@@ -12,7 +12,7 @@ using std::ws;
 
 namespace inputs
 {
-  string PromptReader(const char *Msg);
+  string PromptReader(string Msg);
   stClient LoadRecord(const char *Msg);
   stClient SaveRec(string &AccNum);
 }
