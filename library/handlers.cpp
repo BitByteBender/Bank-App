@@ -29,15 +29,17 @@ namespace handlers
     return (counter);
   }
 
-  void LoadClientsRecs(vector <string> &vClientRecs)
+  void LoadClientsRecs(vector <string> &vClientRecs, bool Trigger=true)
   {
     vector <stClient> vClients = LineToClientsRecord(vClientRecs);
     
     for (const stClient &c:vClients) {
       cout<<" | "<<spaceLimiter(c.AccountNumber, 15);
-      cout<<" | "<<spaceLimiter(to_string(c.PinCode), 10);
+      if (Trigger)
+	cout<<" | "<<spaceLimiter(to_string(c.PinCode), 10);
       cout<<" | "<<spaceLimiter(c.Fullname, 22);
-      cout<<" | "<<spaceLimiter(c.Phone, 21);
+      if (Trigger)
+	cout<<" | "<<spaceLimiter(c.Phone, 21);
       cout<<" | "<<stod(spaceLimiter(to_string(c.AccountBalance), 2))<<'\n';
     }
   }

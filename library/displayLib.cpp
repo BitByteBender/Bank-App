@@ -43,7 +43,7 @@ namespace displayLib
     cout<<'\n';
   }
   
-  void DisplayTable(string TableStyling, uint16_t Len, vector <string> &vClientRecs)
+  void DisplayTable(string Content, string TableStyling, uint16_t Len, vector <string> &vClientRecs, bool Trigger=true)
   {
     uint16_t i = 0;
 
@@ -51,15 +51,11 @@ namespace displayLib
     
     for (i = 0; i < 2 ; ++i) {
       if (i == 0) {
-	cout<<" | Accout Number  "
-	    <<" | Pin Code  "
-	    <<" | Client Name\t\t"
-	    <<" | Phone\t\t"
-	    <<" | Balance  \n";
+	cout<<Content;
 	Styler(TableStyling, Len);
       } else {
 	if (!vClientRecs.empty()) {
-	  handlers::LoadClientsRecs(vClientRecs); 
+	  handlers::LoadClientsRecs(vClientRecs, Trigger); 
 	} else
 	  cout<<str::spaceLimiter("\t\t\t\t\tEmpty Client List", 22)<<'\n';
       }
