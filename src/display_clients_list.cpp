@@ -35,8 +35,23 @@ string BalanceTable()
 
   return (Content);
 }
+
+double TotalBalances(vector <string> &vRecs)
+{
+  double TotalBalances = 0;
+  stClient c;
+  
+  for (const string &r:vRecs) {
+    c = LineToRecord(splitLine(r, "#/\\#"));
+    TotalBalances += c.AccountBalance;
+  }
+
+  return (TotalBalances);
+}
+
 void DisplayBalancesTable(vector <string> &vClientRecs)
 {
   cout<<"\t\t   Balances List ("<<ClientsCount(vClientRecs)<<") Client(s)."<<endl;
   displayLib::DisplayTable(BalanceTable(), "=====", 12, vClientRecs, false);
+  cout<<"\t\t  Total Balances = ["<<TotalBalances(vClientRecs)<<"]\n"<<endl;
 }
