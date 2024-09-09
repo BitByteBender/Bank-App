@@ -44,4 +44,3 @@ void OnBeginPlay(void);
 void TriggerTrxMenu(void);
 void OnExit(void);
 #endif /* CORE_H */
-

@@ -5,7 +5,7 @@ using std::ws;
 
 namespace inputs
 {
-  string PromptReader(const char *Msg)
+  string PromptReader(string Msg)
   {
     string prompt{"Empty"};
 
