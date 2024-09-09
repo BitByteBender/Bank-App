@@ -7,7 +7,7 @@ namespace handlers
 {
   bool CheckAccNum(string &AccNum);
   uint16_t ClientsCount(vector <string> &vClients);
-  void LoadClientsRecs(vector <string> &vClientRecs);
+  void LoadClientsRecs(vector <string> &vClientRecs, bool Trigger);
   string GetSingleRecord(string &AccNum, vector <string> &vRecs, string fname);
   bool CheckRecord(string &AccNum, vector <string> &vRecs, string fname);
   char MakeDecision(string &AccNum, vector <string> &vRecs, string fname, const char *PlaceHolder);
