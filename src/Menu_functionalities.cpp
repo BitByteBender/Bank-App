@@ -13,7 +13,8 @@ enum enMenu
   UpdateClient = 4,
   FindClient = 5,
   Transactions = 6,
-  Exit = 7
+  UserManger = 7,
+  Logout = 8
 };
 
 uint16_t Functionalities(uint16_t Picker)
@@ -43,7 +44,11 @@ uint16_t Functionalities(uint16_t Picker)
   case (enMenu::Transactions):
     TriggerTrxMenu();
     break;
-  case (enMenu::Exit):
+  case (enMenu::UserManger):
+    /* User Manager Func Here */
+    break;
+  case (enMenu::Logout):
+    /* This needs to be change to get back to login screen */
     OnExit();
     break;
   }

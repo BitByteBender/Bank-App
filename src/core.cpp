@@ -8,10 +8,10 @@ void OnBeginPlay(void)
   
   do {
     displayLib::MainMenuScreen("\t    Main Menu Screen");
-    Num = std::stoi(inputs::PromptReader("Choose from the list: "));
-    if (Num >= 1 && Num <= 7)
+    Num = std::stoi(inputs::PromptReader("Choose from the list [1 To 8]: "));
+    if (Num >= 1 && Num <= 8)
       Functionalities(Num);
-  } while (Num != 7);
+  } while (Num != 8);
 }
 
 void TriggerTrxMenu(void)
@@ -20,7 +20,7 @@ void TriggerTrxMenu(void)
   
   do {
     displayLib::TransactionsScreen("\tTransactions Menu Screen");
-    Num = std::stoi(inputs::PromptReader("Choose from the list: "));
+    Num = std::stoi(inputs::PromptReader("Choose from the list [1 To 4]: "));
     if (Num >= 1 && Num <= 4)
       Trx_Menu_Handler(Num);
   } while (Num != 4);
