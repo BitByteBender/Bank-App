@@ -30,7 +30,7 @@ void Trx_Menu_Handler(uint16_t Picker)
     char(inputs::PromptReader("\nPress [0] to get back to transaction menu... ")[0]);
     break;
   case (enTrx::MainMenu):
-    OnBeginPlay();
+    //OnBeginPlay();
     break;
   }
 }
