@@ -1,3 +1,4 @@
+
 #ifndef CORE_H
 #define CORE_H
 
@@ -40,7 +41,7 @@ void DisplayClientsList(vector <string> &vClientRecs);
 
 uint16_t Functionalities(uint16_t Picker);
 void Trx_Menu_Handler(uint16_t Picker);
-void OnBeginPlay(void);
+void OnBeginPlay(vector <uint16_t> vNums);
 void TriggerTrxMenu(void);
 void OnExit(void);
 #endif /* CORE_H */

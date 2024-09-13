@@ -16,3 +16,4 @@
 ![List Of Balances](screenshots/scr02.png)
 ![Deposit](screenshots/scr03.png)
 ![Withdrawn](screenshots/scr04.png)
+## Extension (2): Auth & Permissions (WIP)

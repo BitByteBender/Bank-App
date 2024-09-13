@@ -20,7 +20,8 @@ namespace displayLib
 	<<"\t[4]> Update Client Info\n"
 	<<"\t[5]> Find Client\n"
 	<<"\t[6]> Transactions\n"
-	<<"\t[7]> Exit";
+	<<"\t[7]> Users Manager\n"
+	<<"\t[8]> Logout";
     cout<<"\n========================================\n"<<endl;
   }
 
