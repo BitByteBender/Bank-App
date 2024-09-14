@@ -1,15 +1,10 @@
 #include "headers/core.hpp"
 #include "headers/user.hpp"
+#include <bitset>
+#include <cmath>
 
 int main(void)
 {
-
-  stUser usr = PromptUser();
-  vector vLines = LoadRecordsFromFile("Users");
-  vector vUsers = LoadUsersToVecRec(vLines);
-  OnAuthentication(usr, vUsers);
-
-  //OnBeginPlay();
+  OnAuthentication();
   return (0);
 }
-
