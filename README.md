@@ -17,3 +17,4 @@
 ![Deposit](screenshots/scr03.png)
 ![Withdrawn](screenshots/scr04.png)
 ## Extension (2): Auth & Permissions (WIP)
+permissions system done
